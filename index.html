@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="网页描述">
+<meta name="description" content="努力前进中的小菜鸟">
 <meta name="keywords" content="dying">
 <meta property="og:type" content="website">
 <meta property="og:title" content="林岱颖的博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="林岱颖的博客">
-<meta property="og:description" content="网页描述">
+<meta property="og:description" content="努力前进中的小菜鸟">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="林岱颖的博客">
-<meta name="twitter:description" content="网页描述">
+<meta name="twitter:description" content="努力前进中的小菜鸟">
 
 
 
@@ -181,22 +181,52 @@
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-首页">
           <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-站点概览">
           <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            站点概览
           </a>
         </li>
       
@@ -304,10 +334,17 @@
       
         
           
-            <h1 id="二零一八年七月三号"><a href="#二零一八年七月三号" class="headerlink" title="二零一八年七月三号"></a>二零一八年七月三号</h1><h6 id="大雨-阴天"><a href="#大雨-阴天" class="headerlink" title="大雨  阴天"></a>大雨  阴天</h6><hr>
-<p>今天我就想换一下hexo的主题<br>对换一个漂亮的.<br>之后就可以开开心心,稳稳当当的记录了.</p>
+          二零一八年七月三号大雨  阴天
+今天我就想换一下hexo的主题对换一个漂亮的.之后就可以开开心心,稳稳当当的记录了.
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/03/二零一八年七月三号-1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -425,27 +462,18 @@
       
         
           
-            <hr>
-<p>title:css栅格系统中想填什么填什么<br>date: 2018-07-03 11:46:10</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h1 id="记录初次用Markdown写博客"><a href="#记录初次用Markdown写博客" class="headerlink" title="记录初次用Markdown写博客"></a>记录初次用Markdown写博客</h1><p>表单</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;lable for=&quot;&quot;&gt; 村名 &lt;/lable&gt;</span><br><span class="line">&lt;select class=&quot;form-control&quot;&gt;</span><br><span class="line">        &lt;option value=&quot;1&quot;&gt;南塘镇&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;1&quot;&gt;碣石镇&lt;/option&gt;</span><br><span class="line">        &lt;option value=&quot;1&quot;&gt;东海镇&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>按钮</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;button btn-default&gt;</span><br><span class="line">&lt;button btn-danger&gt;</span><br><span class="line">&lt;button btn-primary&gt;</span><br><span class="line">&lt;button btn-warning&gt;</span><br><span class="line">&lt;button btn-lg /sm/xs&gt;</span><br></pre></td></tr></table></figure>
-<p>bootstrap响应式meta标签的作用</p>
-<p>为了确保在所有设备上能够正确渲染并支持触控缩放，务必将设置 viewport 属性的 meta 标签添加到 <head> 中</head></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</span><br></pre></td></tr></table></figure>
-<p>aria-haspopup</p>
-<p>aria-haspopup :true表示点击的时候会出现菜单或是浮动元素； false表示没有pop-up效果。<br>aria-expanded:表示展开状态。默认为undefined, 表示当前展开状态未知。</p>
-<p>nav用于局部导航 nav-bar用于整站导航</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;nav nav-tabs&quot;&gt;  常规的 个人觉得不好看</span><br><span class="line">   &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;登录&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;    </span><br><span class="line">&lt;ul class=&quot;nav nav-pills&quot;&gt;  药囊式导航栏 美观</span><br><span class="line">   &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;登录&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<p>nav nav-stacked 让导航栏垂直落下  nav nav-justified 让导航栏分布均匀</p>
-<p>#aa {<br>display: -webkit-box;<br>-webkit-box-orient: vertical;   box-orient 属性规定框的子元素应该被水平或垂直排列。<br>-webkit-line-clamp:4;<br>overflow: hidden;<br>}<br>注释：IE 不支持 box-orient 属性。</p>
-<p>panel 面板</p>
-<p>panel panel-default<br>panle-heading<br>panle-title<br>panle-body<br>panle-footer</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;small text-muted&quot;&gt;  字体变小 变得不明显</span><br><span class="line"></span><br><span class="line">分页组件</span><br><span class="line"></span><br><span class="line">&lt;ul class=&quot;pagination&quot;&gt;</span><br><span class="line">&lt;li&gt;&lt;a href=&quot;#&quot;&gt;上一页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;a href=&quot;#&quot;&gt;下一页&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<p>css:<br>opacity属性是调整透明度</p>
-
           
+title:css栅格系统中想填什么填什么date: 2018-07-03 11:46:10
+tags:记录初次用Markdown写博客表单
+1234567&lt;div class=&quot;form-group&quot;&gt;    &lt;lable for=&quot;&quot;&
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/03/栅格系统-1/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -563,9 +591,16 @@
       
         
           
-            <h1 id="记录初次用Markdown写博客"><a href="#记录初次用Markdown写博客" class="headerlink" title="记录初次用Markdown写博客"></a>记录初次用Markdown写博客</h1><p> 我的天 我的天</p>
+          记录初次用Markdown写博客 我的天 我的天
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/03/我的服务器崩了/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -807,17 +842,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/02/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -891,7 +924,7 @@
                 alt="Dying Lin" />
             
               <p class="site-author-name" itemprop="name">Dying Lin</p>
-              <p class="site-description motion-element" itemprop="description">网页描述</p>
+              <p class="site-description motion-element" itemprop="description">努力前进中的小菜鸟</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -899,7 +932,7 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives">
               
                   <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
@@ -1032,6 +1065,8 @@
   
 
 
+  
+
 
 
 
@@ -1070,6 +1105,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
