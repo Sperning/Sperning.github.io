@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="面试题理解一刷  用关键字new创建对象 new都做了什么（随笔）  12345678910111213function Person () &amp;#123;    this.name = name;    this.age = age;    this.job = job;     this.sayName = function () &amp;#123;        return this.name;">
+<meta name="keywords" content="dying">
+<meta property="og:type" content="article">
+<meta property="og:title" content="林岱颖的博客">
+<meta property="og:url" content="http://yoursite.com/2019/04/17/面试题一刷/index.html">
+<meta property="og:site_name" content="林岱颖的博客">
+<meta property="og:description" content="面试题理解一刷  用关键字new创建对象 new都做了什么（随笔）  12345678910111213function Person () &amp;#123;    this.name = name;    this.age = age;    this.job = job;     this.sayName = function () &amp;#123;        return this.name;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-17T03:37:45.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="林岱颖的博客">
+<meta name="twitter:description" content="面试题理解一刷  用关键字new创建对象 new都做了什么（随笔）  12345678910111213function Person () &amp;#123;    this.name = name;    this.age = age;    this.job = job;     this.sayName = function () &amp;#123;        return this.name;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/17/面试题一刷/"/>
+
+
+
+
+
+  <title> | 林岱颖的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">林岱颖的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学无止境</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-站点概览">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            站点概览
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/面试题一刷/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dying Lin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="林岱颖的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-17T11:39:09+08:00">
+                2019-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="面试题理解一刷"><a href="#面试题理解一刷" class="headerlink" title="面试题理解一刷"></a>面试题理解一刷</h1><hr>
+<ol>
+<li><h2 id="用关键字new创建对象-new都做了什么（随笔）"><a href="#用关键字new创建对象-new都做了什么（随笔）" class="headerlink" title="用关键字new创建对象 new都做了什么（随笔）"></a>用关键字new创建对象 new都做了什么（随笔）</h2></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Person () &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.job = job;</span><br><span class="line"> </span><br><span class="line">    this.sayName = function () &#123;</span><br><span class="line">        return this.name;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">var person = new Person(&quot;tom&quot;, 21, &quot;WEB&quot;);</span><br><span class="line"> </span><br><span class="line">console.log(person.name);</span><br></pre></td></tr></table></figure>
+<p><strong>使用关键字new创建新实例对象经过了以下几步</strong>：</p>
+<p>==1==、创建一个新对象，如：var person = {};</p>
+<p>==2==、新对象的<em>proto</em>属性指向构造函数的原型对象。</p>
+<p>==3、将构造函数的作用域赋值给新对象。（也所以this对象指向新对象）==</p>
+<p>4、执行构造函数内部的代码，将属性添加给person中的==this对象==。</p>
+<p>5、返回新对象person。</p>
+<hr>
+<h2 id="2-引起内存泄漏的操作有哪些"><a href="#2-引起内存泄漏的操作有哪些" class="headerlink" title="2. 引起内存泄漏的操作有哪些"></a>2. 引起内存泄漏的操作有哪些</h2><p>1.==全局变量==引起</p>
+<p>2.==闭包==引起</p>
+<p>3.dom清空，事件==未清除==</p>
+<p>4.子元素==存在引用==</p>
+<p>5.==被遗忘的计时器==</p>
+<hr>
+<h2 id="3-如何实现ajax请求"><a href="#3-如何实现ajax请求" class="headerlink" title="3. 如何实现ajax请求"></a>3. 如何实现ajax请求</h2><p>通过实例化一个XMLHttpRequest对象得到一个实例，调用实例的open方法为这次 ajax请求设定相应的http方法、相应的地址和以及是否异步，当然大多数情况下我们都是选异步， 以异步为例，之后调用send方法ajax请求，这个方法可以设定需要发送的报文主体，然后通过 监听readystatechange事件，通过这个实例的readyState属性来判断这个ajax请求的状态，其中分为0,1,2,3,4这四种 状态，当状态为4的时候也就是接收数据完成的时候，这时候可以通过实例的status属性判断这个请求是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(&apos;get&apos;, &apos;aabb.php&apos;, true);</span><br><span class="line">xhr.send(null);</span><br><span class="line">xhr.onreadystatechange = function() &#123;</span><br><span class="line">  if(xhr.readyState==4) &#123;</span><br><span class="line">    if(xhr.status==200) &#123;</span><br><span class="line">      console.log(xhr.responseText);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-对js原型的理解"><a href="#4-对js原型的理解" class="headerlink" title="4. 对js原型的理解"></a>4. 对js原型的理解</h2><p>我们知道在es6之前，js没有类和继承的概念，js是通过原型来实现继承的。在js中一个构造函数默认自带有一个prototype属性， 这个的属性值是一个对象，同时这个prototype对象自带有一个constructor属性，这个属性指向这个构造函数，同时每一个实例 都有一个<strong>proto</strong>属性指向这个prototype对象，我们可以将这个叫做隐式原型，我们在使用一个实例的方法的时候，会先检查 这个实例中是否有这个方法，没有则会继续向上查找这个prototype对象是否有这个方法，刚刚我们说到prototype是一个对象， 那么也即是说这个是一个对象的实例，那么这个对象同样也会有一个<strong>proto</strong>属性指向对象的prototype对象。</p>
+<hr>
+<h2 id="5-对js模块化的理解"><a href="#5-对js模块化的理解" class="headerlink" title="5. 对js模块化的理解"></a>5. 对js模块化的理解</h2><blockquote>
+<p>在ES6出现之前，js没有标准的模块化概念，这也就造成了js多人写作开发容易造成全局污染的情况，以前我们可能会采用立即执行 函数、对象等方式来尽量减少变量这种情况，后面社区为了解决这个问题陆续提出了AMD规范和CMD规范，这里不同于Node.js的 CommonJS的原因在于服务端所有的模块都是存在于硬盘中的，加载和读取几乎是不需要时间的，而浏览器端因为加载速度取决于网速， 因此需要采用异步加载，AMD规范中使用define来定义一个模块，使用require方法来加载一个模块，现在ES6也推出了标准的模块 加载方案，通过export和import来导出和导入模块。</p>
+</blockquote>
+<hr>
+<h2 id="6-简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？"><a href="#6-简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？" class="headerlink" title="6.简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？"></a>6.简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？</h2><blockquote>
+<p>事件代理就是说我们将事件添加到本来要添加事件的父节点，将事件委托给父节点来触发处理函数，这通常会在 这通常会使用在大量的同级元素需要添加同一类事件的时候，比如一个动态的非常多的列表，需要为每个列表项都添加 点击事件，这时可以使用事件代理，通过判断e.target.nodeName来判断发生的具体元素，从而判断是否是在 列表项中触发，这样的好处是可以减少事件绑定，同时动态的DOM结构仍然可以监听。事件代理发生在冒泡阶段。</p>
+</blockquote>
+<hr>
+<h2 id="7-js如何判断网页中图片加载成功或者失败"><a href="#7-js如何判断网页中图片加载成功或者失败" class="headerlink" title="7.js如何判断网页中图片加载成功或者失败"></a>7.js如何判断网页中图片加载成功或者失败</h2><h5 id="使用onload事件运行加载成功，使用onerror事件判断失败"><a href="#使用onload事件运行加载成功，使用onerror事件判断失败" class="headerlink" title="使用onload事件运行加载成功，使用onerror事件判断失败"></a>使用onload事件运行加载成功，使用onerror事件判断失败</h5><hr>
+<h2 id="8-递归和迭代的区别是什么，各有什么优缺点？"><a href="#8-递归和迭代的区别是什么，各有什么优缺点？" class="headerlink" title="8.递归和迭代的区别是什么，各有什么优缺点？"></a>8.递归和迭代的区别是什么，各有什么优缺点？</h2><blockquote>
+<p>程序调用自身称为递归，利用变量的原值推出新值称为迭代<br>归的优点 大问题转化为小问题，可以减少代码量，同时应为代码精简，可读性好， 缺点就是，递归调用浪费了空间，而且递归太深容易造成堆栈的溢出。迭代的好处 就是代码运行效率好，因为时间只因循环次数增加而增加，而且没有额外的空间开销， 缺点就是代码不如递归简洁</p>
+</blockquote>
+<hr>
+<h2 id="9-策略模式是什么，说一下你的理解？"><a href="#9-策略模式是什么，说一下你的理解？" class="headerlink" title="9.策略模式是什么，说一下你的理解？"></a>9.策略模式是什么，说一下你的理解？</h2><blockquote>
+<p> 策略模式就是说我们将一系列的算法封装起来，使其相互之间可以替换，封装的算法具有一定的独立性，不会随客户端的变化而变化，比较常见的使用常见就是类似于 表单验证这种多场景的情况，我们使用策略模式就可以避免使用一堆的if…else。</p>
+</blockquote>
+<hr>
+<h2 id="10-原生JS操作DOM的方法有哪些？"><a href="#10-原生JS操作DOM的方法有哪些？" class="headerlink" title="10.原生JS操作DOM的方法有哪些？"></a>10.原生JS操作DOM的方法有哪些？</h2><blockquote>
+<p>获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、 getElementsByName、querySelector、querySelectorAll,</p>
+<p>对元素属性进行操作的 getAttribute、 setAttribute、removeAttribute方法，</p>
+<p>对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、 createElement等</p>
+</blockquote>
+<hr>
+<h2 id="11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"><a href="#11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么" class="headerlink" title="11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"></a>11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么</h2><blockquote>
+<p>typeof的返回值有undefined、boolean、string、number、object、function、symbol。</p>
+<p>对undefined使用返回undefined、null使用返回object，NaN使用返回number</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/12/Git学习笔记/" rel="next" title="Git学习笔记">
+                <i class="fa fa-chevron-left"></i> Git学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Dying Lin" />
+            
+              <p class="site-author-name" itemprop="name">Dying Lin</p>
+              <p class="site-description motion-element" itemprop="description">努力前进中的小菜鸟</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/sperning" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:971622924@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题理解一刷"><span class="nav-number">1.</span> <span class="nav-text">面试题理解一刷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用关键字new创建对象-new都做了什么（随笔）"><span class="nav-number">1.1.</span> <span class="nav-text">用关键字new创建对象 new都做了什么（随笔）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引起内存泄漏的操作有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">2. 引起内存泄漏的操作有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何实现ajax请求"><span class="nav-number">1.3.</span> <span class="nav-text">3. 如何实现ajax请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-对js原型的理解"><span class="nav-number">1.4.</span> <span class="nav-text">4. 对js原型的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-对js模块化的理解"><span class="nav-number">1.5.</span> <span class="nav-text">5. 对js模块化的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？"><span class="nav-number">1.6.</span> <span class="nav-text">6.简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-js如何判断网页中图片加载成功或者失败"><span class="nav-number">1.7.</span> <span class="nav-text">7.js如何判断网页中图片加载成功或者失败</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用onload事件运行加载成功，使用onerror事件判断失败"><span class="nav-number">1.7.0.0.1.</span> <span class="nav-text">使用onload事件运行加载成功，使用onerror事件判断失败</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-递归和迭代的区别是什么，各有什么优缺点？"><span class="nav-number">1.8.</span> <span class="nav-text">8.递归和迭代的区别是什么，各有什么优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-策略模式是什么，说一下你的理解？"><span class="nav-number">1.9.</span> <span class="nav-text">9.策略模式是什么，说一下你的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-原生JS操作DOM的方法有哪些？"><span class="nav-number">1.10.</span> <span class="nav-text">10.原生JS操作DOM的方法有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"><span class="nav-number">1.11.</span> <span class="nav-text">11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dying Lin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
