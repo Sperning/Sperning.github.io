@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="林岱颖的博客">
 <meta property="og:description" content="面试题理解一刷  用关键字new创建对象 new都做了什么（随笔）  12345678910111213function Person () &amp;#123;    this.name = name;    this.age = age;    this.job = job;     this.sayName = function () &amp;#123;        return this.name;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-17T03:37:45.066Z">
+<meta property="og:updated_time" content="2019-04-17T04:00:45.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="林岱颖的博客">
 <meta name="twitter:description" content="面试题理解一刷  用关键字new创建对象 new都做了什么（随笔）  12345678910111213function Person () &amp;#123;    this.name = name;    this.age = age;    this.job = job;     this.sayName = function () &amp;#123;        return this.name;">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-17T11:39:09+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-17T12:05:23+08:00">
                 2019-04-17
               </time>
             
@@ -379,6 +379,47 @@
 <h2 id="11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"><a href="#11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么" class="headerlink" title="11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"></a>11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么</h2><blockquote>
 <p>typeof的返回值有undefined、boolean、string、number、object、function、symbol。</p>
 <p>对undefined使用返回undefined、null使用返回object，NaN使用返回number</p>
+</blockquote>
+<hr>
+<h2 id="12-javascript做类型判断的方法有哪些？"><a href="#12-javascript做类型判断的方法有哪些？" class="headerlink" title="12.javascript做类型判断的方法有哪些？"></a>12.javascript做类型判断的方法有哪些？</h2><h3 id="typeof、instanceof-、-Object-prototype-toString"><a href="#typeof、instanceof-、-Object-prototype-toString" class="headerlink" title="typeof、instanceof 、 Object.prototype.toString()"></a>typeof、instanceof 、 Object.prototype.toString()</h3><h5 id="instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置"><a href="#instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置" class="headerlink" title="instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置"></a>instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置</h5><h5 id="toString-方法返回一个表示该对象的字符串。"><a href="#toString-方法返回一个表示该对象的字符串。" class="headerlink" title="toString() 方法返回一个表示该对象的字符串。"></a>toString() 方法返回一个表示该对象的字符串。</h5><hr>
+<h2 id="13-setTimeout和setInterval的区别，包含内存方面的分析？"><a href="#13-setTimeout和setInterval的区别，包含内存方面的分析？" class="headerlink" title="13.setTimeout和setInterval的区别，包含内存方面的分析？"></a>13.setTimeout和setInterval的区别，包含内存方面的分析？</h2><blockquote>
+<p>setTimeout表示间隔一段时间之后执行一次调用，而setInterval则是每间隔一段时间循环调用，直至clearInterval结束。 内存方面，setTimeout只需要进入一次队列，不会造成内存溢出，setInterval因为不计算代码执行时间，有可能同时执行多次代码， 导致内存溢出。</p>
+</blockquote>
+<hr>
+<h2 id="14-同源策略是什么？"><a href="#14-同源策略是什么？" class="headerlink" title="14.同源策略是什么？"></a>14.同源策略是什么？</h2><p>同源策略是指==只有具有相同源的页面==才能够共享数据，比如cookie，同源是指页面具有==相同的协议、域名、端口号==，有一项不同就不是同源。 有同源策略能够==保证web网页的安全性==。</p>
+<hr>
+<h2 id="15-ES6之前JavaScript如何实现继承？"><a href="#15-ES6之前JavaScript如何实现继承？" class="headerlink" title="15.ES6之前JavaScript如何实现继承？"></a>15.ES6之前JavaScript如何实现继承？</h2><blockquote>
+<p>ES6之前的继承是通过原型来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在 构造函数的prototype上寻找，而prototype本质上就是一个实例，因此如果prototype上还没有则会往prototype上的构造函数的prototype寻找，因此实现继承 可以让构造函数的prototype是父级的一个实例就是以实现继承。</p>
+</blockquote>
+<hr>
+<h2 id="16-如何阻止事件冒泡和默认事件？"><a href="#16-如何阻止事件冒泡和默认事件？" class="headerlink" title="16.如何阻止事件冒泡和默认事件？"></a>16.如何阻止事件冒泡和默认事件？</h2><blockquote>
+<p>标准的DOM对象中可以使用事件对象的stopPropagation()方法来阻止事件冒泡，但在IE8以下中IE的事件对象通过设置事件对象的cancelBubble属性为true来阻止冒泡； 默认事件的话通过事件对象的preventDefault()方法来阻止，而IE通过设置事件对象的returnValue属性为false来阻止默认事件。</p>
+</blockquote>
+<hr>
+<h2 id="17-addEventListener有哪些参数？"><a href="#17-addEventListener有哪些参数？" class="headerlink" title="17.addEventListener有哪些参数？"></a>17.addEventListener有哪些参数？</h2><p>addEventListener方法是将指定的监听器注册到 EventTarget 上，当该对象触发指定的事件时，指定的回调函数就会被执行。</p>
+<blockquote>
+<p>第一个是事件的类型，</p>
+</blockquote>
+<blockquote>
+<p>第二个是事件的回调函数，</p>
+</blockquote>
+<blockquote>
+<p>第三个是一个表示事件是冒泡阶段还是捕获阶段捕获的布尔值，true表示捕获，false表示冒泡</p>
+</blockquote>
+<hr>
+<h2 id="18-如何实现懒加载？"><a href="#18-如何实现懒加载？" class="headerlink" title="18.如何实现懒加载？"></a>18.如何实现懒加载？</h2><blockquote>
+<p>懒加载就是根据用户的浏览需要记载内容，也就是在用户即将浏览完当前的内容时进行继续加载内容，这种技术常常用来加载图片的时候使用。我们判断用户是否即将浏览到底部之后进行在家内容 这时候可能会需要加载大量的内容，可以使用fragment来优化一下，因为大部分是使用滑动和滚轮来触发的，因此很有可能会不断触发，可以使用函数节流做一个优化，防止用户不断触发。</p>
+</blockquote>
+<hr>
+<h2 id="19-函数节流是什么？"><a href="#19-函数节流是什么？" class="headerlink" title="19.函数节流是什么？"></a>19.函数节流是什么？</h2><p>函数节流就是让一个函数无法在很短的时间间隔内连续调用，</p>
+<p>而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，</p>
+<p>比如我们 为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。</p>
+<hr>
+<h2 id="20-浏览器内核有哪些？分别对应哪些浏览器？"><a href="#20-浏览器内核有哪些？分别对应哪些浏览器？" class="headerlink" title="20.浏览器内核有哪些？分别对应哪些浏览器？"></a>20.浏览器内核有哪些？分别对应哪些浏览器？</h2><blockquote>
+<p>常见的浏览器内核有Trident、Gecko、WebKit、Presto，</p>
+</blockquote>
+<blockquote>
+<p>对应的浏览器为Trident对应于IE，Gecko对应于火狐浏览器，Webkit有chrome和safari，Presto 有Opera。</p>
 </blockquote>
 
       
@@ -555,7 +596,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题理解一刷"><span class="nav-number">1.</span> <span class="nav-text">面试题理解一刷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用关键字new创建对象-new都做了什么（随笔）"><span class="nav-number">1.1.</span> <span class="nav-text">用关键字new创建对象 new都做了什么（随笔）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引起内存泄漏的操作有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">2. 引起内存泄漏的操作有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何实现ajax请求"><span class="nav-number">1.3.</span> <span class="nav-text">3. 如何实现ajax请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-对js原型的理解"><span class="nav-number">1.4.</span> <span class="nav-text">4. 对js原型的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-对js模块化的理解"><span class="nav-number">1.5.</span> <span class="nav-text">5. 对js模块化的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？"><span class="nav-number">1.6.</span> <span class="nav-text">6.简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-js如何判断网页中图片加载成功或者失败"><span class="nav-number">1.7.</span> <span class="nav-text">7.js如何判断网页中图片加载成功或者失败</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用onload事件运行加载成功，使用onerror事件判断失败"><span class="nav-number">1.7.0.0.1.</span> <span class="nav-text">使用onload事件运行加载成功，使用onerror事件判断失败</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-递归和迭代的区别是什么，各有什么优缺点？"><span class="nav-number">1.8.</span> <span class="nav-text">8.递归和迭代的区别是什么，各有什么优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-策略模式是什么，说一下你的理解？"><span class="nav-number">1.9.</span> <span class="nav-text">9.策略模式是什么，说一下你的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-原生JS操作DOM的方法有哪些？"><span class="nav-number">1.10.</span> <span class="nav-text">10.原生JS操作DOM的方法有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"><span class="nav-number">1.11.</span> <span class="nav-text">11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面试题理解一刷"><span class="nav-number">1.</span> <span class="nav-text">面试题理解一刷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用关键字new创建对象-new都做了什么（随笔）"><span class="nav-number">1.1.</span> <span class="nav-text">用关键字new创建对象 new都做了什么（随笔）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引起内存泄漏的操作有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">2. 引起内存泄漏的操作有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-如何实现ajax请求"><span class="nav-number">1.3.</span> <span class="nav-text">3. 如何实现ajax请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-对js原型的理解"><span class="nav-number">1.4.</span> <span class="nav-text">4. 对js原型的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-对js模块化的理解"><span class="nav-number">1.5.</span> <span class="nav-text">5. 对js模块化的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？"><span class="nav-number">1.6.</span> <span class="nav-text">6.简要介绍事件代理，以及什么时候使用，事件代理发生在事件处理流程的哪个阶段，有什么好处？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-js如何判断网页中图片加载成功或者失败"><span class="nav-number">1.7.</span> <span class="nav-text">7.js如何判断网页中图片加载成功或者失败</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用onload事件运行加载成功，使用onerror事件判断失败"><span class="nav-number">1.7.0.0.1.</span> <span class="nav-text">使用onload事件运行加载成功，使用onerror事件判断失败</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-递归和迭代的区别是什么，各有什么优缺点？"><span class="nav-number">1.8.</span> <span class="nav-text">8.递归和迭代的区别是什么，各有什么优缺点？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-策略模式是什么，说一下你的理解？"><span class="nav-number">1.9.</span> <span class="nav-text">9.策略模式是什么，说一下你的理解？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-原生JS操作DOM的方法有哪些？"><span class="nav-number">1.10.</span> <span class="nav-text">10.原生JS操作DOM的方法有哪些？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么"><span class="nav-number">1.11.</span> <span class="nav-text">11.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-javascript做类型判断的方法有哪些？"><span class="nav-number">1.12.</span> <span class="nav-text">12.javascript做类型判断的方法有哪些？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof、instanceof-、-Object-prototype-toString"><span class="nav-number">1.12.1.</span> <span class="nav-text">typeof、instanceof 、 Object.prototype.toString()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置"><span class="nav-number">1.12.1.0.1.</span> <span class="nav-text">instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#toString-方法返回一个表示该对象的字符串。"><span class="nav-number">1.12.1.0.2.</span> <span class="nav-text">toString() 方法返回一个表示该对象的字符串。</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-setTimeout和setInterval的区别，包含内存方面的分析？"><span class="nav-number">1.13.</span> <span class="nav-text">13.setTimeout和setInterval的区别，包含内存方面的分析？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-同源策略是什么？"><span class="nav-number">1.14.</span> <span class="nav-text">14.同源策略是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-ES6之前JavaScript如何实现继承？"><span class="nav-number">1.15.</span> <span class="nav-text">15.ES6之前JavaScript如何实现继承？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-如何阻止事件冒泡和默认事件？"><span class="nav-number">1.16.</span> <span class="nav-text">16.如何阻止事件冒泡和默认事件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-addEventListener有哪些参数？"><span class="nav-number">1.17.</span> <span class="nav-text">17.addEventListener有哪些参数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-如何实现懒加载？"><span class="nav-number">1.18.</span> <span class="nav-text">18.如何实现懒加载？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-函数节流是什么？"><span class="nav-number">1.19.</span> <span class="nav-text">19.函数节流是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-浏览器内核有哪些？分别对应哪些浏览器？"><span class="nav-number">1.20.</span> <span class="nav-text">20.浏览器内核有哪些？分别对应哪些浏览器？</span></a></li></ol></li></ol></div>
             
 
           </div>
